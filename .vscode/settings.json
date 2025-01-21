@@ -4,17 +4,17 @@
     "**/node_modules": true
   },
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/node_modules": true,
-    "**/*.js.map": {
-      "when": "$(basename)"
-    }
-  },
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true,
+		"**/node_modules": true,
+		"**/*.js.map": {
+			"when": "$(basename)"
+		}
+	},
   "files.associations": {
     "*.jsx": "javascriptreact",
     "*.tsx": "typescriptreact",
