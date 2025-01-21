@@ -1,8 +1,9 @@
 [
   {
-    "id": "5d6eb62f-ab16-46f2-aa31-f408b2406e45",
+    "id": "8e4d6193-631f-4a37-a936-05ecf26e2852",
     "name": "하늘",
     "email": "neul@email.com",
-    "password": "$2b$09$EsSbjKb2y1lj5OzOFV/bo.aW8U3wak4lxSeDTC7JuHn0bxWJiirBq"
+    "profileImage": "/files/e87339b57020aaa5428112bca72e9b35.jpg",
+    "password": "$2b$09$g/Orxo7XCO1Ns4TnQgq.yuMYVg4Pbko8w5flaszGMtMBrnoKsyVla"
   }
 ]
