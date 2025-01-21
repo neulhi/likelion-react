@@ -1,26 +1,8 @@
 [
   {
-    "name": "한제이",
-    "email": "hanj2@kakao.com",
-    "password": "$2b$10$K7PvRTiwF3xH5h9R.2IZoOrM54q5fkxlHJiQuTSvRz5vm7O99lxrO",
-    "id": "591c1b02-c690-4348-8dcc-a0c1fb693edf"
-  },
-  {
-    "name": "지훈",
-    "email": "yamoo9@naver.com",
-    "password": "$2b$10$6dHtQ34rZC5yWbm9YQOiU.hI9Ek0MrUzlrt0cD9XlSVVHHvUvQbLi",
-    "id": "17c7075e-0cb6-42e8-9d02-156aab3a4935"
-  },
-  {
-    "id": "5414890d-6356-4d98-a025-448cb4f5bb6f",
-    "name": "박현주",
-    "email": "park@naver.com",
-    "password": "$2b$09$T0DThVi0di2ZsV8IdHXw9OWDDs0NXy3ykAl78QIDMIpw/pXXZgZ36"
-  },
-  {
-    "id": "da14d7a8-6276-44ed-a985-952f4bd9c8c2",
+    "id": "5d6eb62f-ab16-46f2-aa31-f408b2406e45",
     "name": "하늘",
     "email": "neul@email.com",
-    "password": "$2b$09$58J4dp50JLh2jJpbtazKuOOF5Xgfdxc2WUx6SHbRZ2dM/UoyjYHqi"
+    "password": "$2b$09$EsSbjKb2y1lj5OzOFV/bo.aW8U3wak4lxSeDTC7JuHn0bxWJiirBq"
   }
 ]
