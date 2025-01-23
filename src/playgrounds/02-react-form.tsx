@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import FormInput from '@/components/form-input';
+import FormTextArea from '@/components/form-textarea';
 
 const formStyles = {
   display: 'flex',
@@ -40,23 +41,8 @@ function ReactForm() {
     }
   };
 
-  // for 문
-  // const handleUploadPhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const fileList = e.target.files;
-
-  //   if (fileList && fileList.length > 0) {
-  //     const fileArray: File[] = [];
-
-  //     for (let i = 0, l = fileList.length; i < l; ++i) {
-  //       const file = fileList.item(i);
-  //       if (file) fileArray.push(file);
-  //     }
-  //     setPhotos(fileArray);
-  //   }
-  // };
-
   const [contents, setContents] = useState<string>(
-    '사랑하는 사람에게 전하는 메세지를 남겨주제요~'
+    '모든 사람들에게 전할 메시지를 남겨주세요~'
   );
 
   const handleUpdateContents = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -67,19 +53,14 @@ function ReactForm() {
     <div className="ReactForm">
       <h2>React 폼(form)</h2>
       <form style={formStyles}>
-        <div
-          style={{ width: '100%', display: 'flex', flexFlow: 'column', gap: 4 }}
-        >
-          <label htmlFor="greeting-message">인사말</label>
-          <textarea
-            id="greeting-message"
-            cols={60}
-            rows={4}
-            value={contents}
-            onChange={handleUpdateContents}
-            style={{ resize: 'vertical' }}
-          />
-        </div>
+        <FormTextArea
+          label="인사말"
+          name="contents"
+          value={contents}
+          onChange={handleUpdateContents}
+          resize="horizontal"
+        />
+        <FormTextArea label="프로포즈" name="propose" defaultValue="propose" />
 
         <div style={{ padding: 12, border: '0.5px solid rgba(0 0 0 / 30%)' }}>
           <FormInput
