@@ -18,20 +18,20 @@
 		button {
 			--size: 24px;
 
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			inline-size: var(--size);
-			block-size: var(--size);
-			background-color: transparent;
-			border-radius: 6px;
-			border: 0;
-			padding: 0;
-			line-height: 1;
+			/* display: flex;
+      justify-content: center;
+      align-items: center;
+      inline-size: var(--size);
+      block-size: var(--size);
+      background-color: transparent;
+      border-radius: 6px;
+      border: 0;
+      padding: 0;
+      line-height: 1; */
 
-			&:hover:not(:disabled, &[aria-disabled="true"]) {
-				background-color: rgba(0 0 0 / 10%);
-			}
+			/* &:hover:not(:disabled, &[aria-disabled="true"]) {
+        background-color: rgba(0 0 0 / 10%);
+      } */
 		}
 	}
 
