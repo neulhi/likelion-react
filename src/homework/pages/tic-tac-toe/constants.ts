@@ -11,4 +11,4 @@ export const enum PLAYER {
 }
 
 export type Player = null | PLAYER;
-export type Cells = (Player[] | null)[];
+export type Cells = (Player | null)[];
