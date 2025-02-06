@@ -29,7 +29,7 @@ function Cell({ children, className = '', onPlay, ...restProps }: CellProps) {
         'text-2xl font-semibold',
         'border-black/50',
         { 'hover:border-black hover:bg-slate-100/60': !hasChildren },
-        { 'cursor-not-allowed': hasChildren },
+        { 'cursor-not-allowed bg-black/10': hasChildren },
         className
       )}
       onClick={handlePlay}
