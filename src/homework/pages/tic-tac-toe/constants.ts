@@ -1,16 +1,18 @@
 // ----------------------------------------------
-// 게임 상수
+// 게임 진행을 위한 상수 및 함수
 // ----------------------------------------------
 
-/* const INITIAL_CELLS = [null, null, null, null, null, null, null, null, null]; */
-export const INITIAL_CELLS = Array(9).fill(null);
-
 export const enum PLAYER {
-  ONE = '🥵',
-  TWO = '🥶',
+  ONE = '😎',
+  TWO = '🤢',
 }
 
-export type Cells = (PLAYER | null)[];
+export type Cell /* BoardPlayer */ = PLAYER | null;
+
+export type Cells /* Board */ = Cell[];
+
+/* const INITIAL_CELLS = [null, null, null, null, null, null, null, null, null]; */
+export const INITIAL_CELLS: Cells = Array(9).fill(null);
 
 // 다음 플레이어 반환 함수
 export const getNextPlayer = (order: number) => {
@@ -29,6 +31,7 @@ const WINNER_CONDITIONS = [
   [2, 4, 6],
 ];
 
+// 게임 진행 검사 -> 게임 위너 반환 함수
 export type Winner = {
   player: PLAYER;
   condition: [number, number, number];
@@ -53,7 +56,7 @@ export const getWinner = (cells: Cells) => {
   return winner as Winner;
 };
 
-// 게임 상태 메세지 반환 함수
+// 게임 상태 메시지 반환 함수
 export const getStatusMessage = (
   nextPlayer: PLAYER,
   winner: Winner,
