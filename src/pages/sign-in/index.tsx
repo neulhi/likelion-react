@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import S from './style.module.scss';
-import { isEmail, isPassword } from '@/homework/lib/validator';
+import { isEmail, isPassword } from '@/lib/validator';
 import ActionButton from '@/homework/components/action-button';
 import FormInput from '@/homework/components/form-input';
 
