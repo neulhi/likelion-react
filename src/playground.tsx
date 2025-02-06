@@ -2,12 +2,14 @@ import { useState } from 'react';
 import Nav from '@/homework/components/nav';
 import { getUIView } from '@/homework/lib/ui-view';
 import StateManagement from '@/homework/pages/state-management';
+import ErrorBoundaryDemo from './homework/pages/error-boundary';
 import SignInForm from '@/homework/pages/sign-in';
 import SignUpForm from '@/homework/pages/sign-up';
 import TicTacToe from './homework/pages/tic-tac-toe';
 
 const getViewElement = (uiView: string) => {
   let viewElement: React.ReactElement | null = null;
+
   switch (uiView) {
     case 'signin': {
       viewElement = <SignInForm />;
@@ -25,13 +27,17 @@ const getViewElement = (uiView: string) => {
       viewElement = <TicTacToe />;
       break;
     }
+    case 'error-boundary': {
+      viewElement = <ErrorBoundaryDemo />;
+      break;
+    }
   }
+
   return viewElement;
 };
 
 function Playground() {
   const [uiView] = useState<string>(getUIView);
-
   const viewElement = getViewElement(uiView);
 
   return (
