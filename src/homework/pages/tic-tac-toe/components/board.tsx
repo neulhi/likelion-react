@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { tm } from '@/utils/tw-merge';
+import Status from './status';
+import Grid from './grid';
 import {
   getNextPlayer,
   getStatusMessage,
@@ -7,23 +9,22 @@ import {
   INITIAL_CELLS,
   type Cells,
 } from '../constants';
-import Status from './status';
-import Grid from './grid';
 
 function Board() {
   // [상태]
   // 게임 보드 셀(cells, 9개(3 x 3))
   const [cells, setCells] = useState<Cells>(INITIAL_CELLS);
 
-  // [파생된 상태]
+  // [상태]
   // 게임 순서(order)
   const [order, setOrder] = useState<number>(0);
 
   // [파생된 상태]
-  // 다음 플레이어(Next Player)는?
+  // 다음 플레이어
   const nextPlayer = getNextPlayer(order);
 
-  // 현재 게임 턴에 승리자(Winner)가 있나요?
+  // [파생된 상태]
+  // 게임 승자 정보
   const winner = getWinner(cells);
 
   // [파생된 상태]
@@ -51,10 +52,18 @@ function Board() {
     setCells(nextCells);
   };
 
+  // [이벤트 핸들러]
+  // 게임 초기화 함수
+  const handleReGame = () => {
+    // 게임 운영에 사용되는 상태 초기화 (리셋, 리-게임)
+    setCells(INITIAL_CELLS);
+    setOrder(0);
+  };
+
   return (
     <section className={tm('flex flex-col space-y-2 items-center', 'w-60')}>
       <h3 className="sr-only">게임 보드</h3>
-      <Status message={statusMessage} />
+      <Status message={statusMessage} onReGame={handleReGame} />
       <Grid cells={cells} winner={winner} onPlay={handlePlay} />
     </section>
   );
