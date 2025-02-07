@@ -1,4 +1,4 @@
-import { tm } from '@/utils/tw-merge';
+import { tm } from "@/utils/tw-merge";
 
 function LifecycleDemo() {
   return (

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import S from './style.module.css';
-import FormInput from '@/homework/components/form-input';
-import ActionButton from '@/homework/components/action-button';
+import FormInput from '@/components/form-input';
+import ActionButton from '@/components/action-button';
 import { isEmail, isPassword } from '@/lib/validator';
 
 interface SignUpFormData {
