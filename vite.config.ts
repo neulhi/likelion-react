@@ -7,6 +7,7 @@ const viteConfig = defineConfig((env) => {
   const isDevMode = env.mode.includes('development');
 
   return {
+    base: isDevMode ? '/' : '/likelion-react/',
     plugins: [
       react({
         jsxRuntime: 'automatic',
