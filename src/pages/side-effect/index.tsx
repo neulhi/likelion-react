@@ -1,61 +1,36 @@
 import { useEffect, useState } from 'react';
-import { tm } from '@/utils/tw-merge';
-import Button from './button';
 
 function SideEffectDemo() {
-  // --------------------------------------------------------------------------
+  // [반응성 데이터: 상태] 선언
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
-  const [message, setMessage] = useState('');
-
-  const handleConfirmStateChange = () => {
-    console.group('상태 변경 요청');
-    console.log('[전]', { message });
-    const nextMessage = message + '🎩';
-    setMessage(nextMessage);
-
-    console.log('[후]', { message: nextMessage });
-    console.groupEnd();
-  };
-
+  // [이펙트] 이벤트 구독 / 취소
   useEffect(() => {
-    console.log('이펙트 함수 콜백', { message });
-  }, [message]);
+    // 사이드 이펙트 처리
+    // 브라우저 시스템(React의 외부 시스템)과 React 앱 동기화(sync)
+    // 이벤트 구독
+    console.log('이벤트 구독');
 
-  // --------------------------------------------------------------------------
+    const handleMove = (e: PointerEvent) => {
+      // 리액트 상태 업데이트 (리액트 앱과 외부 시스템 동기화)
+      setMouse({ x: +e.clientX.toFixed(0), y: +e.clientY.toFixed(0) });
+    };
 
-  const [count, setCount] = useState(0);
+    globalThis.addEventListener('pointermove', handleMove);
 
-  const handleChangeCount = () => setCount((c) => c + 1);
-
-  useEffect(() => {
-    console.log({ count });
-  }, [count]);
-
-  // --------------------------------------------------------------------------
+    // 이벤트 구독 해지
+    return () => {
+      console.log('이벤트 구독 해지');
+      globalThis.removeEventListener('pointermove', handleMove);
+    };
+  }, []);
 
   return (
     <section className="*:text-slate-800">
       <h2 className="text-2xl font-medium mb-2">React.useEffect 훅 함수</h2>
-      <button type="button" onClick={handleConfirmStateChange}>
-        상태 변경 (요청)
-      </button>
-      <hr />
-      <button type="button" onClick={handleChangeCount}>
-        {count}
-      </button>
-      <div className="flex gap-3 items-center">
-        <p>Console 패널을 열고 🧤 버튼을 눌러보세요.</p>
-        <Button message={message} onMessage={setMessage} />
-      </div>
-
-      <p
-        className={tm(
-          'select-none',
-          'text-5xl mt-5 leading-tight text-lime-700'
-        )}
-      >
-        {message}
-      </p>
+      <output className="inline-flex my-5 py-3 px-5 border-2 text-2xl">
+        x = {mouse.x} / y = {mouse.y}
+      </output>
     </section>
   );
 }
