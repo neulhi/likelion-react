@@ -23,7 +23,7 @@ function SearchListPage() {
       return it.id === item.id ? { ...it, isFavorited: nextIsFavorited } : it;
     });
 
-    console.log('before\n', nextList);
+    console.log('after\n', nextList);
 
     // React에 다음 렌더링에서 list 상태 스냅샷 전달하면
     // 다시 렌더링 될 때, list 상태 값으로 nextList가 사용 됨
