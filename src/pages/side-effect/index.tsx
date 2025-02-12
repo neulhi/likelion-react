@@ -55,7 +55,7 @@ function SideEffectDemo() {
     },
   ]);
 
-  console.log(list);
+  // console.log(list);
 
   const handleShuffleList = () => {
     // 리스트 셔플(섞음)
