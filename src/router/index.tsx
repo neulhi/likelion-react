@@ -15,12 +15,12 @@ import AccessDOMPage from '@/pages/access-dom';
 // 내비게이션 리스트 데이터
 
 export const navList = [
+  { path: 'accessing-dom', text: 'DOM 접근/조작', element: <AccessDOMPage /> },
   {
     path: 'animation',
     text: '애니메이션',
     element: <AnimationWithMotionPage />,
   },
-  { path: 'accessing-dom', text: 'DOM 접근/조작', element: <AccessDOMPage /> },
   {
     path: 'memory-component-data',
     text: '데이터 메모리',
