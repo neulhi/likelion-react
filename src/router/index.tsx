@@ -1,4 +1,5 @@
 import MemoryComponentDataPage from '@/pages/memory-component-data';
+import AnimationWithMotionPage from '@/pages/animation-with-motion';
 import StateManagement from '@/pages/state-management';
 import ErrorBoundaryDemo from '@/pages/error-boundary';
 import SearchListPage from '@/pages/search-list';
@@ -14,6 +15,11 @@ import AccessDOMPage from '@/pages/access-dom';
 // 내비게이션 리스트 데이터
 
 export const navList = [
+  {
+    path: 'animation',
+    text: '애니메이션',
+    element: <AnimationWithMotionPage />,
+  },
   { path: 'accessing-dom', text: 'DOM 접근/조작', element: <AccessDOMPage /> },
   {
     path: 'memory-component-data',
