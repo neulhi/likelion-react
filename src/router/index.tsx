@@ -28,7 +28,7 @@ export const navList = [
   },
   {
     path: 'animation',
-    text: '애니메이션',
+    text: '모션 애니메이션',
     element: <AnimationWithMotionPage />,
   },
   {
