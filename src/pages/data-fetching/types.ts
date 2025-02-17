@@ -24,7 +24,7 @@ export interface Recipe {
   mealType: string[];
 }
 
-export enum Difficulty {
+export const enum Difficulty {
   Easy = 'Easy',
   Medium = 'Medium',
 }
