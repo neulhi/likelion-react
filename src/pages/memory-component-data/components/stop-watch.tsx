@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
 import { tm } from '@/utils/tw-merge';
+import { useEffect, useRef, useState } from 'react';
+import { PauseSolid, PlaySolid, StopSolid } from '@mynaui/icons-react';
 
 /*
   // reset time
@@ -26,16 +27,16 @@ const getDateNow = () => Date.now();
 // recordTime + nowTime - startTime
 const formatTime = (time: number) => {
   // 밀리초(miliseconds)
-  const miliseconds = parseInt(`${time % 100}`, 10);
+  const miliseconds = Math.floor((time % 100) / 10);
 
   // 초(seconds) = 1000ms
-  const seconds = parseInt(`${(time / 1000) % 60}`, 10);
+  const seconds = Math.floor((time / 1000) % 60);
 
   // 분(minutes) = 60s
-  const minutes = parseInt(`${(time / (1000 * 60)) % 60}`, 10);
+  const minutes = Math.floor((time / (1000 * 60)) % 60);
 
   // 시(hours) = 60m
-  const hours = parseInt(`${(time / (1000 * 60 * 60)) % 60}`, 10);
+  const hours = Math.floor((time / (1000 * 60 * 60)) % 60);
 
   // 숫자값을 2자리로 설정
   // 예) 0  →  "00"
@@ -155,6 +156,8 @@ function StopWatch() {
         <button
           type="button"
           onClick={handleStartOrPause}
+          aria-label={isStart ? '일시정지' : '시작'}
+          title={isStart ? '일시정지' : '시작'}
           className={tm(
             'cursor-pointer opacity-75',
             'grid place-content-center',
@@ -162,11 +165,14 @@ function StopWatch() {
             'hover:opacity-100'
           )}
         >
-          {isStart ? '일시정지' : '시작'}
+          {/* {isStart ? '일시정지' : '시작'} */}
+          {isStart ? <PauseSolid /> : <PlaySolid />}
         </button>
         <button
           type="button"
           onClick={handleStop}
+          aria-label="정지"
+          title="정지"
           className={tm(
             'cursor-pointer opacity-90',
             'grid place-content-center',
@@ -174,7 +180,8 @@ function StopWatch() {
             'hover:opacity-100'
           )}
         >
-          정지
+          {/* 정지 */}
+          <StopSolid />
         </button>
       </div>
     </article>
