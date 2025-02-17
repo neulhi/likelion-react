@@ -7,7 +7,7 @@ import RecipeSingle from './components/RecipeSingle';
 function DataFetchingPage() {
   return (
     <section className="flex flex-col gap-5 my-5">
-      <h2 className="text-xl font-medium">데이터 변형(Data Mutations)</h2>
+      <h2 className="text-2xl font-medium">데이터 변형(Data Mutations)</h2>
       <RecipeCreate />
       <RecipeEdit />
       <RecipeDelete />
