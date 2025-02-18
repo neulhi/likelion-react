@@ -2,19 +2,38 @@ import { tm } from '@/utils/tw-merge';
 import { EditOne, TrashOne } from '@mynaui/icons-react';
 import type { MemoItem as MemoItemType } from '../lib/supabase-client';
 import { deleteMemoItem } from '../lib/api';
+import { useState } from 'react';
+import Loading from './loading';
+import delay from '@/utils/delay';
 
 interface MemoItemProps {
   item: MemoItemType;
 }
 
 function MemoItem({ item }: MemoItemProps) {
-  const hadleDelete = async () => {
-    const response = await deleteMemoItem(item.id);
-    console.log(response);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const handleDelete = async () => {
+    setIsDeleting(true);
+    await delay(2000);
+    await deleteMemoItem(item.id);
+    setIsDeleting(false);
   };
 
   return (
-    <li className="flex flex-col gap-1.5 p-4 bg-react text-white rounded-sm">
+    <li
+      className={tm(
+        'flex flex-col gap-1.5 p-4 bg-react text-white rounded-sm',
+        { 'relative bg-react/70': isDeleting }
+      )}
+    >
+      {isDeleting && (
+        <Loading
+          label="삭제 중..."
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-10"
+        />
+      )}
+
       <h3 className="font-light tracking-wide text-xl text-sky-500">
         {item.title}
       </h3>
@@ -35,7 +54,7 @@ function MemoItem({ item }: MemoItemProps) {
         <button
           type="button"
           aria-label="삭제"
-          onClick={hadleDelete}
+          onClick={handleDelete}
           className={tm(
             'cursor-pointer',
             'size-5 opacity-75 hover:opacity-100'
