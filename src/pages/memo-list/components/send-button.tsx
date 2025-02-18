@@ -1,6 +1,6 @@
-import { tm } from '@/utils/tw-merge';
-import { SendSolid } from '@mynaui/icons-react';
 import { useFormStatus } from 'react-dom';
+import { SendSolid } from '@mynaui/icons-react';
+import { tm } from '@/utils/tw-merge';
 import Loading from './loading';
 
 function SendButton() {

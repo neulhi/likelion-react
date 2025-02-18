@@ -19,12 +19,15 @@ function StaggerList() {
     const itemMap = getItemMap();
     const items = Array.from(itemMap.values());
 
-    // 스태거(stagger) 애니메이션
     items.forEach((item, index) => {
-      // keyframes 애니메이션
       animate(
         item,
-        { y: [100, -50, 25, 5, 0], opacity: [0, 1] },
+        {
+          // keyframes 애니메이션
+          y: [100, -50, 25, 5, 0],
+          opacity: [0, 1],
+        },
+        // 스태거(stagger) 애니메이션
         { delay: 0.2 * index }
       );
     });

@@ -2,10 +2,13 @@ import { useEffect, useState } from 'react';
 import type { PostgrestError } from '@supabase/supabase-js';
 import type { MemoItem } from './lib/supabase-client';
 import MemoList from './components/memo-list';
-import { getMemoList, subscribe } from './lib/api';
 import Loading from './components/loading';
+import { getMemoList, subscribe } from './lib/api';
+import useDocumentTitle from '@/hooks/use-document-title';
 
 function MemoListPage() {
+  useDocumentTitle('메모리스트 with Supabase');
+
   const [loading, setLoading] = useState<boolean>(true);
   const [data, setData] = useState<null | MemoItem[]>(null);
   const [error, setError] = useState<null | PostgrestError>(null);
