@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { MemoItem } from '../lib/supabase-client';
 import CreateForm from './create-form';
 import SearchForm from './search-form';
@@ -8,11 +9,15 @@ interface MemoListProps {
 }
 
 function MemoList({ items }: MemoListProps) {
+  const [search, setSearch] = useState('');
+
   return (
     <div>
       <CreateForm />
-      <SearchForm />
-      <SearchedList />
+      <hr className="my-5 border-black/40" />
+      <SearchForm setSearch={setSearch} />
+      <hr className="my-5 border-black/40" />
+      <SearchedList items={items} search={search} />
     </div>
   );
 }
