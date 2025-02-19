@@ -51,6 +51,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-call': 'off',
       // '@typescript-eslint/no-floating-promises': 'off',
       // '@typescript-eslint/consistent-type-definitions': 'error',
+      // 'react/prop-types': 'off',
       'react-refresh/only-export-components': [
         'warn',
         {
