@@ -1,14 +1,12 @@
-import { useEffect, useState } from 'react';
+import Title from '@/components/title';
 import type { PostgrestError } from '@supabase/supabase-js';
-import type { MemoItem } from './lib/supabase-client';
-import MemoList from './components/memo-list';
+import { useEffect, useState } from 'react';
 import Loading from './components/loading';
+import MemoList from './components/memo-list';
 import { getMemoList, subscribe } from './lib/api';
-import useDocumentTitle from '@/hooks/use-document-title';
+import type { MemoItem } from './lib/supabase-client';
 
 function MemoListPage() {
-  useDocumentTitle('메모리스트 with Supabase');
-
   const [loading, setLoading] = useState<boolean>(true);
   const [data, setData] = useState<null | MemoItem[]>(null);
   const [error, setError] = useState<null | PostgrestError>(null);
@@ -76,12 +74,15 @@ function MemoListPage() {
   }, []);
 
   return (
-    <section>
-      <h1 className="sr-only">메모 리스트 (with Supabase)</h1>
-      {loading && <Loading />}
-      {error && <div role="alert">{error.message}</div>}
-      {data && <MemoList items={data} />}
-    </section>
+    <>
+      <Title>메모리스트 with Supabase</Title>
+      <section>
+        <h1 className="sr-only">메모 리스트 (with Supabase)</h1>
+        {loading && <Loading />}
+        {error && <div role="alert">{error.message}</div>}
+        {data && <MemoList items={data} />}
+      </section>
+    </>
   );
 }
 
