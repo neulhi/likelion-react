@@ -39,7 +39,7 @@ function TicTacToe() {
 
   // [파생된 상태]
   // 다음 플레이어
-  const nextPlayer = getNextPlayer(gameOrder);
+  const nextPlayer = getNextPlayer(gameOrder!);
 
   // [파생된 상태]
   // 게임 승자 정보
