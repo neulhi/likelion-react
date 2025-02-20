@@ -2,6 +2,7 @@ import UnderstandingContextPage from '@/pages/understanding-context/page';
 import MemoryComponentDataPage from '@/pages/memory-component-data/page';
 import AnimationWithMotionPage from '@/pages/animation-with-motion/page';
 import TicTacToeWithContext from '@/pages/tic-tac-toe-with-context/page';
+import ZustandManageStatePage from '@/pages/zustand-manage-state/page';
 import AutoHeadingsLevelPage from '@/pages/auto-headings-level/page';
 import StateManagement from '@/pages/state-management/page';
 import ErrorBoundaryDemo from '@/pages/error-boundary/page';
@@ -24,6 +25,11 @@ import NotFound from '@/pages/not-found/page';
 // 내비게이션 리스트 데이터
 
 export const navList = [
+  {
+    path: 'state-management-zustand',
+    text: '상태 관리(with Zustand)',
+    element: <ZustandManageStatePage />,
+  },
   {
     path: 'react-optimization',
     text: '성능 최적화',
