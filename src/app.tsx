@@ -6,6 +6,7 @@ import SignInPage from './pages/sign-in/page';
 import SignUpPage from './pages/sign-up/page';
 import PrintError from './components/error';
 import HomePage from './pages/home/page';
+import AuthLayout from './layouts/auth/layout';
 
 function App() {
   return (
@@ -17,8 +18,14 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="/playground" element={<PlaygroundPage />} />
 
-            <Route path="/signin" element={<SignInPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
+            {/* 레이아웃 */}
+            <Route path="/auth" element={<AuthLayout />}>
+              {/* 중첩된 라우트 */}
+              {/* 페이지는 배출구(Outlet)로 연결 */}
+              {/* 페이지 */}
+              <Route path="signin" element={<SignInPage />} />
+              <Route path="signup" element={<SignUpPage />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
