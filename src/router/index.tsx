@@ -2,7 +2,7 @@ import UnderstandingContextPage from '@/pages/understanding-context/page';
 import MemoryComponentDataPage from '@/pages/memory-component-data/page';
 import AnimationWithMotionPage from '@/pages/animation-with-motion/page';
 import TicTacToeWithContext from '@/pages/tic-tac-toe-with-context/page';
-import ZustandManageStatePage from '@/pages/zustand-manage-state/page';
+import AppStateManagementPage from '@/pages/app-state-management/page';
 import AutoHeadingsLevelPage from '@/pages/auto-headings-level/page';
 import StateManagement from '@/pages/state-management/page';
 import ErrorBoundaryDemo from '@/pages/error-boundary/page';
@@ -26,9 +26,9 @@ import NotFound from '@/pages/not-found/page';
 
 export const navList = [
   {
-    path: 'state-management-zustand',
-    text: '상태 관리(with Zustand)',
-    element: <ZustandManageStatePage />,
+    path: 'app-state-management',
+    text: '앱 상태 관리',
+    element: <AppStateManagementPage />,
   },
   {
     path: 'react-optimization',
