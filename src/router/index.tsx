@@ -4,6 +4,7 @@ import AnimationWithMotionPage from '@/pages/animation-with-motion/page';
 import TicTacToeWithContext from '@/pages/tic-tac-toe-with-context/page';
 import AppStateManagementPage from '@/pages/app-state-management/page';
 import AutoHeadingsLevelPage from '@/pages/auto-headings-level/page';
+import AuthManagementPage from '@/pages/auth-management/page';
 import StateManagement from '@/pages/state-management/page';
 import ErrorBoundaryDemo from '@/pages/error-boundary/page';
 import UsingContextPage from '@/pages/using-context/page';
@@ -25,6 +26,11 @@ import NotFound from '@/pages/not-found/page';
 // 내비게이션 리스트 데이터
 
 export const navList = [
+  {
+    path: 'auth',
+    text: '사용자 관리',
+    element: <AuthManagementPage />,
+  },
   {
     path: 'app-state-management',
     text: '앱 상태 관리',
